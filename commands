@@ -1,0 +1,8 @@
+Forcely delete pod if stuck in terminiating :-
+kubectl delete pod jupiter-spark-7469949554-s2p76 -n data-platform --grace-period 0 --force
+
+Create service account and clusterrolebinding :-
+kubectl create serviceaccount spark -n data-platform
+kubectl create clusterrolebinding spark-role --clusterrole=edit --serviceaccount=data-platform:spark --namespace=data-platform
+
+
